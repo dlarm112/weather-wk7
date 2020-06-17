@@ -1,5 +1,5 @@
 <h1>{{title}}</h1>
-<p>Derek was here {{title}}</p>
+
 
 
 <section>
@@ -9,9 +9,38 @@
     </form>
 
     {{#if forecast}}
+    <h3>Current:</h3>
     <ul>
-        <li>Temperature: {{ forecast.temp }}</li>
-        <li>Description: {{ forecast.weather.0.description }}</li>
+        <li>Temperature: {{ forecast.current.temp }}°F</li>
+        <li>Description: {{ forecast.current.weather.0.description }}</li>
     </ul>
+    <h3>12 Hour Forecast</h3>  
+    <div>
+        {{forecast.hourly.temp}}
+    </div>  
+  
+    {{#if momentArrayShort}}
+    <table align="center">
+        <tr>
+            {{#each momentArrayShort}}
+                <td>
+                    {{this}}
+                </td>
+            {{/each}}
+        </tr>
+            {{#each hourlyWeather}}
+                <td>
+                    {{this}}°F
+                </td>
+            {{/each}}
+        <tr>
+            {{#each hourlyDesc}}
+                <td>
+                    {{this}}
+                </td>
+            {{/each}}
+        </tr>
+    </table>
     {{/if}}
+  {{/if}}
 </section>

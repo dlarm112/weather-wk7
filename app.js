@@ -12,6 +12,26 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+
+// var exphbs = require('express-handlebars');
+
+// function hbsHelpers(hbs) {
+//   return hbs.create({
+//     helpers: { // This was missing
+//       inc: function(value, options) {
+//         console.log('reading it');
+//         return parseInt(value) + 1;
+//       }
+
+//       // More helpers...
+//     }
+
+//   });
+// }
+
+// var handlebars  = hbsHelpers(exphbs);
+// app.engine('hbs', handlebars.engine);
+
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));

@@ -11,3 +11,13 @@ a {
 ul {
   list-style: none;
 }
+td {
+  text-align: center;
+  vertical-align: middle;
+  border: solid 2px #aaaaaa;
+  padding: 5px;
+}
+
+table{
+  
+}
